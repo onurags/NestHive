@@ -1,0 +1,168 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/* navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-solid{
+    color: #FF5A5F;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+
+/*footer*/
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: #222222;
+}
+
+.f-info-socials,
+.f-info-links,
+.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* card effect */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* create new page */
+.add-btn{
+    background-color: #FF5A5F !important;
+    color: #ffffff !important;
+}
+
+.add-btn:hover{
+    background-color: #ffffff !important;
+    color: #FF5A5F !important;
+    
+}
+
+/* Edit Page */
+.edit-btn{
+    background-color: #FF5A5F !important;
+    color: #ffffff !important;
+    border-color: #FF5A5F !important;
+}
+
+.edit-btn:hover{
+    background-color: #ffffff !important;
+    color: #FF5A5F !important;
+    border-color: #FF5A5F !important;
+    
+}
+
+/* show page  */
+
+.show-img{
+    height: 30vh;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+    /* btns */
+
+.btns{
+    display: flex;
+    
+}
+
+.rt{
+    margin-right: 10px;
+    border: 3px solid #FF5A5F;
+    background-color: #FF5A5F !important;
+    color: #ffffff !important;
+    border-color: #FF5A5F !important;
+    /* border-radius: 20px !important;
+    padding: 0 1rem 0 1rem !important; */
+
+}
+
+.rt i {
+    color: #ffffff !important; /* Pink icon initially */
+    font-size: 18px;
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.rt:hover i {
+    color: #FF5A5F !important; /* White icon on hover */
+}
+
+.rt:hover{
+    margin-right: 10px;
+    background-color: #ffffff !important;
+    color: #FF5A5F !important;
+    border-color: #FF5A5F !important;
+}
+

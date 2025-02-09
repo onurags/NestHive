@@ -1,0 +1,174 @@
+<% layout("/layouts/boilerplate") %> 
+
+<style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter {
+    text-align: center;
+    margin-right: 2rem; 
+    margin-top: 1rem;
+    opacity: 0.7;
+  }
+
+  .filter i {
+  font-size: 24px;
+  color: #212126; /* Blackish-Grey Icon Color */
+  }
+
+  .filter:hover {
+    opacity: 1;
+    color: #FF5A5F;
+    cursor: pointer;
+  }
+
+ /* Apply hover color change to both icon and text */
+.filter:hover i,
+.filter:hover p {
+  color: #FF5A5F; /* Pink color on hover */
+}
+
+  .filter p {
+    size: 14px;
+  }
+
+  .tax-info{
+    display: none;
+  }
+
+  .tax-toggle{
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    height: 3.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  }
+
+  .tax-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05); 
+  border: 1px solid #333;
+  cursor: pointer;
+
+}
+
+/* Default state (unchecked) */
+.form-check-input {
+  background-color: #ccc; /* Default background */
+  border-color: #555; /* Border color */
+}
+
+/* Checked (when toggled on) */
+.form-check-input:checked {
+  background-color: #FF5A5F !important; 
+  border-color: #FF5A5F !important;
+}
+
+/* Remove blue outline when clicked */
+.form-check-input:focus {
+  box-shadow: 0 0 5px rgba(14, 6, 7, 0.5); 
+  border-color: #000000;
+}
+
+
+</style>
+
+
+<div id="filters">
+  <div class="filter">
+    <i class="fa-solid fa-fire"></i>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-bed"></i>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-city"></i>
+    <p>Iconic Cities</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mountain-sun"></i>
+    <p>Mountains</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-chess-rook"></i>
+    <p>Castles</p>
+  </div>
+  <!-- <div class="filter">
+    <i class="fa-solid fa-person-swimming"></i>
+    <p>Amazing Pools</p>
+  </div> -->
+  <div class="filter">
+    <i class="fa-solid fa-house-flag"></i>
+    <p>Camping</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-tractor"></i>
+    <p>Farms</p>
+  </div>
+  <!-- <div class="filter">
+    <i class="fa-solid fa-star-of-life"></i>
+    <p>Arctic</p>
+  </div> -->
+  <div class="filter">
+    <i class="fa-solid fa-house-laptop"></i>
+    <p>Cabins</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-landmark"></i>
+    <p>Historical Homes</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-house-chimney-crack"></i>
+    <p>Island</p>
+  </div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display total after Taxes</label>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-1">
+  <% for(let listing of allListings) { %>
+    <a href="/listings/<%= listing._id%>" class="listing-link">
+      <div class="card col listing-card" >
+        <img 
+          src="<%= listing.image.url %>" 
+          class="card-img-top" 
+          alt="listing_image" 
+          style="height: 20rem"
+        >
+        <div class="card-img-overlay">Service Included</div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %></b> <br>
+            &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : 'N/A' %> / night
+            <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+          </p>
+        </div> <br>
+      </div>
+    </a>
+    <% } %>
+</div>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for(info of taxInfo){
+      if(info.style.display != "inline"){
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
