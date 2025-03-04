@@ -136,10 +136,6 @@ Please ensure your code follows the project's coding standards and includes appr
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Keywords
-
-accommodation, booking platform, travel, vacation rentals, property listings, MongoDB, Express, Node.js, Bootstrap, responsive design, Cloudinary, user authentication, reviews, ratings
-
 ---
 
 © 2025 NestHive Private Limited. All rights reserved.
